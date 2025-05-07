@@ -7,9 +7,11 @@
 ## 📋 Table of Contents
 
 * [Features](#features)
+* [Development Status](#development-status)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Customization](#customization)
+* [Development](#development)
+* [Testing](#testing)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -46,43 +48,77 @@
 * **Voice Peak Monitor**: Monitor speaking volume to ensure clarity.
 * **Widget & Watch App**: Access mini decibel meters on home screens or smartwatches.
 * **Offline Mode**: Utilize all tools without an internet connection.
-* **Customizable UI Themes**: Switch between light/dark modes and customize waveform colors.([cemglwpc.blob.core.windows.net][1], [CSDN Blog][2])
+* **Customizable UI Themes**: Switch between light/dark modes and customize waveform colors.
+
+---
+
+## 🚧 Development Status
+
+### Current Implementation
+- Basic project structure with React Native and TypeScript
+- Decibel meter component with accelerometer-based simulation
+- Testing setup with Jest and React Native Testing Library
+- Basic navigation structure
+
+### Planned Improvements
+1. **Audio Processing**
+   - Implement actual microphone-based decibel measurement
+   - Add FFT analysis for frequency spectrum
+   - Implement proper audio calibration
+
+2. **UI/UX Enhancements**
+   - Add dark mode support
+   - Implement responsive layouts
+   - Add animations for better user feedback
+
+3. **Core Features**
+   - Implement sound logging functionality
+   - Add emergency tools (SOS emitter)
+   - Develop water sound player
+   - Add device maintenance features
+
+4. **Testing & Quality**
+   - Add end-to-end testing
+   - Implement performance monitoring
+   - Add accessibility features
 
 ---
 
 ## 📲 Installation
 
 1. **Clone the repository**:
-
    ```bash
    git clone https://github.com/makalin/dbTools.git
    ```
 
-
-
-2. **Navigate to the project directory**:([GitHub][3])
-
+2. **Navigate to the project directory**:
    ```bash
    cd dbTools
    ```
 
-
-
 3. **Install dependencies**:
-
    ```bash
    npm install
    ```
 
+4. **iOS Setup** (iOS only):
+   ```bash
+   cd ios && pod install && cd ..
+   ```
 
-
-4. **Run the application**:([CSDN Blog][2])
-
+5. **Start the development server**:
    ```bash
    npm start
    ```
 
-
+6. **Run the application**:
+   ```bash
+   # For iOS
+   npm run ios
+   
+   # For Android
+   npm run android
+   ```
 
 ---
 
@@ -96,11 +132,41 @@
 
 ---
 
-## 🎨 Customization
+## 💻 Development
 
-* **Themes**: Switch between light, dark, and high-contrast modes.
-* **Layout**: Rearrange, resize, or hide UI components to suit your workflow.
-* **Fonts & Colors**: Customize fonts and colors for better readability and accessibility.
+### Project Structure
+```
+dbTools/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── screens/        # Screen components
+│   └── utils/          # Utility functions
+├── __tests__/         # Test files
+├── App.tsx            # Root component
+└── package.json       # Dependencies and scripts
+```
+
+### Available Scripts
+- `npm start`: Start the Metro bundler
+- `npm run ios`: Run on iOS simulator
+- `npm run android`: Run on Android emulator
+- `npm test`: Run tests
+- `npm run lint`: Run ESLint
+
+---
+
+## 🧪 Testing
+
+The project uses Jest and React Native Testing Library for testing. Run tests with:
+
+```bash
+npm test
+```
+
+Current test coverage includes:
+- Component rendering
+- Basic functionality
+- User interactions
 
 ---
 
@@ -108,29 +174,20 @@
 
 Contributions are welcome! Please follow these steps:
 
-1. **Fork the repository**.
-2. **Create a new branch**:([dbader.org][4])
-
+1. **Fork the repository**
+2. **Create a new branch**:
    ```bash
    git checkout -b feature/YourFeature
    ```
-
-
-3\. **Commit your changes**:([pixso.net][5])
-
-```bash
-git commit -m 'Add YourFeature'
-```
-
-
-4\. **Push to the branch**:([GitHub][6])
-
-```bash
-git push origin feature/YourFeature
-```
-
-
-5\. **Open a Pull Request**.([Relyence][7])
+3. **Commit your changes**:
+   ```bash
+   git commit -m 'Add YourFeature'
+   ```
+4. **Push to the branch**:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. **Open a Pull Request**
 
 ---
 
